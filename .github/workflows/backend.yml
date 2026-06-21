@@ -39,4 +39,4 @@ jobs:
 
       - name: Trigger Coolify deploy
         run: |
-          curl --request GET "${{ secrets.COOLIFY_BACKEND_WEBHOOK }}" --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+          curl --request GET "${{ secrets.COOLIFY_WEBHOOK_BACKEND }}" --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
