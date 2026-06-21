@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import api from "@/lib/api"
 
-export default function ActivatePage() {
+function ActivateForm() {
   const params = useSearchParams()
   const token = params.get("token") ?? ""
   const router = useRouter()
@@ -83,5 +83,13 @@ export default function ActivatePage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function ActivatePage() {
+  return (
+    <Suspense>
+      <ActivateForm />
+    </Suspense>
   )
 }
